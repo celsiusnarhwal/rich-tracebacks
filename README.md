@@ -1,8 +1,8 @@
 # rich-tracebacks
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rich-tracebacks?logo=python&logoColor=white&style=for-the-badge)](https://pypi.org/project/rich-tracebacks)
-[![PyPI](https://img.shields.io/pypi/v/rich-tracebacks?logo=pypi&logoColor=white&style=for-the-badge)](https://pypi.org/project/rich-tracebacks)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/celsiusnarhwal/rich-tracebacks?logo=github&logoColor=white&style=for-the-badge)](https://github.com/celsiusnarhwal/rich-tracebacks/releases)
+[![PyPI](https://img.shields.io/pypi/v/rich-tracebacks?logo=pypi&color=green&logoColor=white&style=for-the-badge)](https://pypi.org/project/rich-tracebacks)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/celsiusnarhwal/rich-tracebacks?logo=github&color=orange&logoColor=white&style=for-the-badge)](https://github.com/celsiusnarhwal/rich-tracebacks/releases)
 [![PyPI - License](https://img.shields.io/pypi/l/rich-tracebacks?color=03cb98&style=for-the-badge)](https://github.com/celsiusnarhwal/rich-tracebacks/blob/main/LICENSE)
 
 rich-tracebacks automates the installation
@@ -22,7 +22,8 @@ pip install rich-tracebacks
 
 ### Enabling
 
-Set the `RICH_TRACEBACKS` environment variable to `1`.
+Set the `RICH_TRACEBACKS` environment variable. The value of the variable doesn't matter, but we'll use `1` as an
+example.
 
 ```bash
 export RICH_TRACEBACKS=1
@@ -32,13 +33,7 @@ That's it. Rich's traceback handler will be automatically installed each time yo
 
 ### Disabling
 
-Set the `RICH_TRACEBACKS` environment variable to `0`.
-
-```bash
-export RICH_TRACEBACKS=0
-```
-
-Alternatively, you can unset the variable entirely.
+Unset the `RICH_TRACEBACKS` environment variable.
 
 ```bash
 unset RICH_TRACEBACKS
