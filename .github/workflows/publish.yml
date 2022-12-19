@@ -1,0 +1,30 @@
+on:
+  release:
+    types:
+      - published
+
+  workflow_dispatch:
+
+
+jobs:
+  publish-package:
+    name: Publish to PyPI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Repository
+
+      - uses: actions/setup-python@v2
+        name: Set Up Python
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python -
+
+      - name: Install Dependencies
+        run: poetry install --without dev
+
+      - name: Configure Credentials
+        run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+
+      - name: Build and Publish
+        run: poetry publish --build

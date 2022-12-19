@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "rich-tracebacks"
+version = "1.0.0"
+description = "Automatic installation of Rich's traceback handler"
+authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
+readme = "README.md"
+license = "MIT"
+include = ["rich_tracebacks.pth"]
+
+[tool.poetry.dependencies]
+python = "^3.6.3"
+rich = "^12.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
