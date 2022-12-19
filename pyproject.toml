@@ -3,6 +3,7 @@ name = "rich-tracebacks"
 version = "1.0.0"
 description = "Automatic installation of Rich's traceback handler"
 authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
+homepage = "https://github.com/celsiusnarhwal/rich-tracebacks"
 readme = "README.md"
 license = "MIT"
 include = ["rich_tracebacks.pth"]
