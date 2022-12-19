@@ -28,7 +28,7 @@ Set the `RICH_TRACEBACKS` environment variable to `1`.
 export RICH_TRACEBACKS=1
 ```
 
-That's it.
+That's it. Rich's traceback handler will be automatically installed each time you run your program.
 
 ### Disabling
 
@@ -48,7 +48,7 @@ unset RICH_TRACEBACKS
 
 You can configure the traceback handler with
 its [supported options](https://rich.readthedocs.io/en/stable/reference/traceback.html#rich.traceback.install)
-by creating a `rt_config.py` file at your project's root. The file should contain a dictionary named `config`
+by creating an `rt_config.py` file at your project's root. The file should contain a dictionary named `config`
 that maps option names to their intended values. For example:
 
 ```python
@@ -79,5 +79,9 @@ config = {
 
 Options that are not defined in `rt_config.py` will fall back to their default values. If `rt_config.py`
 does not exist, all options will fall back to their default values.
+
+## License
+
+rich-tracebacks is licensed under the [MIT License](https://github.com/celsiusnarhwal/rich-tracebacks/blob/main/LICENSE.md).
 
 
