@@ -2,12 +2,13 @@ import importlib
 import os
 from pathlib import Path
 from types import ModuleType
+from typing import Union
 
 from rich import print
 from rich.traceback import install
 
 
-def _resolve_module(module: str) -> ModuleType:
+def _resolve_module(module: Union[str, ModuleType]) -> ModuleType:
     if type(module) is str:
         try:
             return importlib.import_module(module)
@@ -19,6 +20,8 @@ def _resolve_module(module: str) -> ModuleType:
                 )
 
             return module
+
+    return module
 
 
 if os.getenv("RICH_TRACEBACKS"):
