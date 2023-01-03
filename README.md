@@ -60,7 +60,7 @@ config = {
 Options that are not defined in `rt_config.py` will fall back to their default values. If `rt_config.py`
 does not exist, all options will fall back to their default values.
 
-#### A note on the `suppress` Option
+#### A note on the `suppress` option
 
 Rich's traceback handler supports a `suppress` option to which you can pass an iterable of modules and paths to be
 excluded from tracebacks. To suppress a module, you would normally need to import the module and then pass the
