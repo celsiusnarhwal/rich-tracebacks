@@ -57,23 +57,38 @@ config = {
 }
 ```
 
-Of special note is the `console` option, which takes
-a [Rich Console](https://rich.readthedocs.io/en/stable/reference/console.html#rich.console.Console) object. To use this
-option, you must import the `Console` class in your `rt_config.py` file. For example:
+Options that are not defined in `rt_config.py` will fall back to their default values. If `rt_config.py`
+does not exist, all options will fall back to their default values.
+
+#### A note on the `suppress` Option
+
+Rich's traceback handler supports a `suppress` option to which you can pass an iterable of modules and paths to be
+excluded from tracebacks. To suppress a module, you would normally need to import the module and then pass the
+module object to the `suppress` option. For example:
+
+```python
+import loctocat
+from rich.traceback import install
+
+install(suppress=[loctocat])
+```
+
+With rich-tracebacks, you also have the option of simply passing the module's name as a string. For example:
 
 ```python
 # rt_config.py
 
-from rich.console import Console
-
 config = {
-    "console": Console(file=open("traceback.log", "w")),
+    "suppress": ["loctocat"],
     ...
 }
 ```
 
-Options that are not defined in `rt_config.py` will fall back to their default values. If `rt_config.py`
-does not exist, all options will fall back to their default values.
+rich-tracebacks will do the work of importing the module for you and passing the module object to Rich.
+Names it can't import will be passed to Rich as literal strings, which will in turn treat them as paths.
+
+
+
 
 ## License
 
