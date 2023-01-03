@@ -19,8 +19,6 @@ def _resolve_module(module: Union[str, ModuleType]) -> ModuleType:
                     f"no module with that name was found."
                 )
 
-            return module
-
     return module
 
 
@@ -31,7 +29,7 @@ if os.getenv("RICH_TRACEBACKS"):
         config = {}
 
     config["suppress"] = [
-        _resolve_module(module) for module in config.get("suppress", [])
+        _resolve_module(module) for module in config.get("suppress", ())
     ]
 
     install(**config)
