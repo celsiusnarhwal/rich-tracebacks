@@ -87,11 +87,17 @@ config = {
 rich-tracebacks will do the work of importing the module for you and passing the module object to Rich.
 Names it can't import will be passed to Rich as literal strings, which will in turn treat them as paths.
 
+## FAQ
 
+### Q: I use PyCharm and rich-tracebacks doesn't seem to be working if my program calls `sys.excepthook` while I'm using the debugger, please help.
 
+A: Congratulations on encountering this ridiculously niche isssue. Setting the `RICH_TRACEBACKS_PYCHARM` environment
+variable in the relevant run configuration will apply a very much experimental fix for this issue. If it doesn't work,
+[open an issue](https://github.com/celsiusnarhwal/rich-tracebacks/issues/new) and I will try to help you as best I can.
 
 ## License
 
-rich-tracebacks is licensed under the [MIT License](https://github.com/celsiusnarhwal/rich-tracebacks/blob/main/LICENSE.md).
+rich-tracebacks is licensed under
+the [MIT License](https://github.com/celsiusnarhwal/rich-tracebacks/blob/main/LICENSE.md).
 
 

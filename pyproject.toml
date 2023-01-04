@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rich-tracebacks"
-version = "1.1.1"
+version = "1.2.1"
 description = "Automatic installation of Rich's traceback handler"
 authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
 homepage = "https://github.com/celsiusnarhwal/rich-tracebacks"
