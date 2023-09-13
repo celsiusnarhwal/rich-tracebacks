@@ -67,10 +67,10 @@ excluded from tracebacks. To suppress a module, you would normally need to impor
 module object to the `suppress` option. For example:
 
 ```python
-import loctocat
+import foo
 from rich.traceback import install
 
-install(suppress=[loctocat])
+install(suppress=[foo])
 ```
 
 With rich-tracebacks, you also have the option of simply passing the module's name as a string. For example:
@@ -79,7 +79,7 @@ With rich-tracebacks, you also have the option of simply passing the module's na
 # rt_config.py
 
 config = {
-    "suppress": ["loctocat"],
+    "suppress": ["foo"],
     ...
 }
 ```
