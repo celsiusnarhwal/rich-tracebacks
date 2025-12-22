@@ -25,7 +25,7 @@ if os.getenv("RICH_TRACEBACKS"):
             pass
         else:
             config["suppress"] = [pydevd] + [
-                module for module in config.get("suppress", "[]")
+                module for module in config.get("suppress", [])
             ]
             install(**config)
             breakpoints.dummy_excepthook = sys.excepthook
