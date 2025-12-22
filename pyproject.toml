@@ -1,17 +1,27 @@
-[tool.poetry]
+[project]
 name = "rich-tracebacks"
-version = "1.2.1"
 description = "Automatic installation of Rich's traceback handler"
-authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
-homepage = "https://github.com/celsiusnarhwal/rich-tracebacks"
+authors = [
+	{ name = "celsius narhwal", email = "hello@celsiusnarhwal.dev" }
+]
 readme = "README.md"
 license = "MIT"
-include = ["rich_tracebacks.pth"]
+requires-python = ">=3.6.2"
+dependencies = [
+	"rich>=12",
+]
+dynamic = ["version"]
 
-[tool.poetry.dependencies]
-python = "^3.6.3"
-rich = "^12.6.0"
+[project.urls]
+Repository = "https://github.com/celsiusnarhwal/rich-tracebacks"
+Issues = "https://github.com/celsiusnarhwal/rich-tracebacks/issues"
+
+[tool.pdm.build]
+includes = ["rich_tracebacks", "rich_tracebacks.pth"]
+
+[tool.pdm.version]
+source = "scm"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"

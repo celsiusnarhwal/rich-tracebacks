@@ -1,10 +1,5 @@
 # rich-tracebacks
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rich-tracebacks?logo=python&logoColor=white&style=for-the-badge)](https://pypi.org/project/rich-tracebacks)
-[![PyPI](https://img.shields.io/pypi/v/rich-tracebacks?logo=pypi&color=green&logoColor=white&style=for-the-badge)](https://pypi.org/project/rich-tracebacks)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/celsiusnarhwal/rich-tracebacks?logo=github&color=orange&logoColor=white&style=for-the-badge)](https://github.com/celsiusnarhwal/rich-tracebacks/releases)
-[![PyPI - License](https://img.shields.io/pypi/l/rich-tracebacks?color=03cb98&style=for-the-badge)](https://github.com/celsiusnarhwal/rich-tracebacks/blob/main/LICENSE)
-
 rich-tracebacks automates the installation
 of [Rich's traceback handler](https://rich.readthedocs.io/en/stable/traceback.html#traceback-handler) in Python
 programs. Compared to Rich's
@@ -30,6 +25,10 @@ export RICH_TRACEBACKS=1
 ```
 
 That's it. Rich's traceback handler will be automatically installed each time you run your program.
+
+> [!IMPORTANT]
+> If you use [PyCharm](https://jetbrains.com/pycharm), you may notice that rich-tracebacks doesn't work when using
+> PyCharm's debugger. You can fix this by setting the `RICH_TRACEBACKS_PYCHARM` environment variable to any value.
 
 ### Disabling
 
@@ -59,44 +58,3 @@ config = {
 
 Options that are not defined in `rt_config.py` will fall back to their default values. If `rt_config.py`
 does not exist, all options will fall back to their default values.
-
-#### A note on the `suppress` option
-
-Rich's traceback handler supports a `suppress` option to which you can pass an iterable of modules and paths to be
-excluded from tracebacks. To suppress a module, you would normally need to import the module and then pass the
-module object to the `suppress` option. For example:
-
-```python
-import foo
-from rich.traceback import install
-
-install(suppress=[foo])
-```
-
-With rich-tracebacks, you also have the option of simply passing the module's name as a string. For example:
-
-```python
-# rt_config.py
-
-config = {
-    "suppress": ["foo"],
-    ...
-}
-```
-
-rich-tracebacks will do the work of importing the module for you and passing the module object to Rich.
-Names it can't import will be passed to Rich as literal strings, which will in turn treat them as paths.
-
-## PyCharm Support
-
-PyCharm users may find that rich-tracebacks doesn't seem to work if `sys.excepthook` is called while using the IDE's debugger.
-If that's you, setting the `RICH_TRACEBACKS_PYCHARM` environment variable in the relevant run configuration will apply
-an experimental fix for this issue. If it doesn't work,
-[open an issue](https://github.com/celsiusnarhwal/rich-tracebacks/issues/new) and I will try to help you as best I can.
-
-## License
-
-rich-tracebacks is licensed under
-the [MIT License](https://github.com/celsiusnarhwal/rich-tracebacks/blob/main/LICENSE.md).
-
-
