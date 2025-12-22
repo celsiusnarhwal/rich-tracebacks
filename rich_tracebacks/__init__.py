@@ -29,5 +29,6 @@ if os.getenv("RICH_TRACEBACKS"):
             ]
 
             install(**config)
+
             breakpoints.dummy_excepthook = sys.excepthook
             breakpoints.original_excepthook = noop
